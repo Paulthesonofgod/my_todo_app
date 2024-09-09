@@ -1,5 +1,7 @@
 import streamlit as st
 import functions
+from datetime import datetime
+import pytz
 
 todos = functions.get_todos()
 
@@ -10,6 +12,7 @@ def add_todo():
     functions.write_todos(todos)
 
 
+st.write(datetime(2020, 1, 10, 10, 30, tzinfo=pytz.timezone("EST")))
 st.title("My Todo App")
 st.subheader("This is my todo app")
 st.write("This app is to increase your productivity")
@@ -26,4 +29,4 @@ st.text_input(label="", placeholder="Add new todo...",
 
 print("hello")
 
-st.session_state
+
